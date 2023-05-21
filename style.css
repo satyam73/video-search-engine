@@ -1,0 +1,273 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --color-lightgrey: #fafafa;
+    --color-white: #ffffff;
+    --color-grey: #5D6067;
+    --color-light-blue: #2A8CFF;
+}
+
+body {
+    background-color: var(--color-lightgrey);
+}
+
+.header {
+    display: flex;
+    height: 3.75rem;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.logo {
+    margin-right: 1rem;
+}
+
+.header h1 {
+    font-size: 1.4rem;
+}
+
+.search {
+    position: relative;
+    height: 3rem;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+}
+
+.search__input {
+    height: inherit;
+    font-size: 1.3rem;
+    min-width: 60vw;
+    border-radius: 0.7rem;
+    border: none;
+    padding: 1rem;
+}
+
+.search__input:focus {
+    outline: none;
+}
+
+.search__button {
+    all: unset;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    bottom: 5px;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+/* results section designing */
+.results{
+    z-index: -1;
+}
+
+.result-card {
+    height: 11rem;
+    min-width: 60vw;
+    background-color: var(--color-white);
+    display: flex;
+    padding: 1rem;
+    margin: 0.7rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.result-card__image-section {
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+}
+
+.result-card__image {
+    height: 80%;
+    border-radius: 0.7rem;
+}
+
+.result-card__info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.result-card__title{
+    font-size: 1.2rem;
+}
+
+.result-card__channel{
+    font-size: 0.8rem;
+    color: var(--color-grey);
+}
+
+.result-card__source-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-card__source{
+    font-size: 0.8rem;
+    font-weight: 500;
+    
+    color: var(--color-grey);
+}
+
+.result-card__views{
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-grey);
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.next, .prev{
+    all: unset;
+    background-color: var(--color-white);
+    display: block;
+    width: 12rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-grey);
+    border-radius: 0.3rem;
+    margin: auto;
+    cursor: pointer;
+}
+
+.search-on-google{
+    all: unset;
+    color: var(--color-light-blue);
+    font-size: 1.27rem;
+    font-weight: 500;
+    background-color: var(--color-white);
+    padding: 1rem;
+    width: 12rem;
+    text-align: center;
+    display: block;
+    margin: auto;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+/* modal designing */
+.modal{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.modal__video{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 16/9;
+}
+
+.hide{
+    display: none;
+}
+
+.modal__buttons{
+    position: absolute;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    bottom: 30px;
+    left: 50px;
+}
+
+.visit{
+    all: unset;
+    color: var(--color-white);
+    background: var(--color-light-blue);
+    border-radius: 1rem;
+    padding: 1rem 1.6rem;
+    font-size: 1rem;
+    width: 3rem;
+    text-align: center;
+    font-weight: 600;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.close{
+    all: unset;
+    color: var(--color-white);
+    border-radius: 1rem;
+    padding: 1rem 1.6rem;
+    font-size: 1rem;
+    width: 3rem;
+    text-align: center;
+    background-color: var(--color-grey);
+    font-weight: 600;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+/* media queries */
+@media only screen and (max-width: 800px){
+    .modal__video{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .result-card{
+        height: 7rem;
+    }
+    .result-card__title{
+        font-size: 0.9rem;
+    }
+    .modal__video{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 382px){
+    .result-card{
+        height: 6rem;
+    }
+
+    .result-card__title{
+        font-size: 0.7rem;
+    }
+
+    .result-card__channel{
+        font-size: 0.6rem;
+        color: var(--color-grey);
+    }
+    
+    .result-card__source{
+        font-size: 0.6rem;
+        font-weight: 500;
+        color: var(--color-grey);
+    }
+    
+    .result-card__views{
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: var(--color-grey);
+    }
+}
+
+
+
+
